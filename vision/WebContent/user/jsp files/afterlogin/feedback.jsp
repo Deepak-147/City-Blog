@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<%@ include file="/user/jsp files/checksession.jsp" %>
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="/vision/user/css files/user.css" />
+<script type='text/Javascript' src="/vision/user/js files/user_feedback.js">
+</script>
+<style>
+input[type=submit],input[type=reset] {
+	width: 40%;
+	background-color:Black;
+	margin-top: 30px;
+	color: Orange;
+	border: 2px solid Black;
+	padding: 10px;
+	font-size:20px;
+	cursor:pointer;
+	border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body style="background:url(/vision/user/images/background/parquet_flooring-1920x1200.jpg) ">
+<form id="feedback" method="post" action="/vision/FeedbackServlet">
+ <table id='tb' align="center" cellpadding="10" cellspacing="20" >
+  <tr>
+    <td id='top'>FEEDBACK</td>
+  </tr>
+  <tr>
+    <td><span class='textfield'>Username:</span><span class="star">*</span></td>
+	<td><input type="text" name="usrname" id="usrname" style="width:283px;height:32px" /></td>
+	<td class='height' id="usrnameError">&nbsp; </td>
+  </tr>
+  
+  <tr>
+    <td><span class='textfield'>Suggestion:</span><span class="star">*</span></td>
+	<td><textarea name="comments" id="comments" rows="6" cols="33"  ></textarea></td>
+	<td class='height' id="commentsError">&nbsp; </td>
+  </tr>
+  <tr>
+   <td colspan="2" align="center" class='height'>
+    <input type='submit' name='submit' value='Submit' id='submit' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type='reset'  name='cancel' value='Cancel' id='reset' /></td>
+
+   </td>
+  </tr>
+ </table>
+</form>
+
+</body>
+</html>

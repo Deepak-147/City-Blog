@@ -1,0 +1,251 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@ include file="/user/jsp files/checksession.jsp" %>
+<script src="/vision/user/js files/scroll.js" type="text/javascript"></script>
+<title>Insert title here</title>
+<script type="text/javascript">
+var image1=new Image()
+image1.src="/vision/user/images/ranakpur/ranakpur-qpr.jpg"
+var image2=new Image()
+image2.src="/vision/user/images/ranakpur/1200px-Jain_Temple_Ranakpur.jpg"
+var image3=new Image()
+image3.src="/vision/user/images/ranakpur/1198px-Ranakpur-Jain-Marble-Temple-main-Shrine-.jpg"
+var image4=new Image()
+image4.src="/vision/user/images/ranakpur/1198px-Ranakpur-Jain-Marble-Temple-pillars-Frescoes-.jpg"
+var image5=new Image()
+image5.src="/vision/user/images/ranakpur/1200px-Ranakpur_India.jpg"
+var image6=new Image()
+image6.src="/vision/user/images/ranakpur/1198px-Ranakpur-Jain-Marble-Temple-wall-Frescoes-.jpg"
+</script>
+
+<style>
+
+/* hover menu*/
+#indiv tr td a {
+    float: left;
+	display: block;
+	width: 160px;
+	height: 45px;
+	padding: 20px 0px 0 0px;
+	margin: 0px 10px 0px 10px ;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	color:Black;	
+	font-weight: bold;
+	outline: none;
+}
+
+#indiv tr td a:hover,#indiv tr td .current {
+	border-radius: 10px;
+	background: Black ;
+	color: Orange; 
+}	
+
+#indiv tr td ul li ul li a:hover {
+	background:none;  
+  	color: White; 
+}
+
+/* drop down menu*/
+/*body {
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 20px 50px 150px;
+  font-size: 13px;
+  text-align: center;
+  background: #E3CAA1;
+}*/
+
+#dropdown ul {
+	text-align: left;
+  	display: inline;
+  	margin: 0;
+  	padding: 45px 10px 17px 5px;
+  	list-style: none;
+  	/*-
+  	webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  	*/
+}
+
+#dropdown ul li {
+	font: bold 16px/16px sans-serif;
+  	display: inline-block;
+  	margin-right: 5px;
+  	position: relative;
+  	padding: 10px 15px;
+  	background: rgba(213, 35, 35, 0.67);
+  	cursor: pointer;
+  	-webkit-transition: all 0.2s;
+  	-moz-transition: all 0.2s;
+  	-ms-transition: all 0.2s;
+  	-o-transition: all 0.2s;
+  	transition: all 0.2s;
+}
+
+#dropdown ul li:hover {
+	background: rgba(213, 35, 35, 0.67);
+  	color: #fff;
+}
+
+#dropdown ul li ul {
+	padding: 0px;
+  	position: absolute;
+  	top: 52px;
+  	left: 0px;
+  	width: 130px;
+  	/*
+  	-webkit-box-shadow: none;
+  	-moz-box-shadow: none;
+  	box-shadow: none;
+  	*/
+  	display: none;
+  	opacity: 0;
+  	visibility: hidden;
+  	-webkit-transiton: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+  	-ms-transition: opacity 0.2s;
+  	-o-transition: opacity 0.2s;
+  	-transition: opacity 0.2s;
+}
+#dropdown ul li ul li { 
+  background: rgba(199, 89, 38, 0.67);
+  display: block; 
+  color: #fff;
+  //text-shadow: 0 -1px 0 #000;
+}
+#dropdown ul li ul li:hover 
+{ background: rgba(199, 89, 38, 0.67);display: none;
+}
+#dropdown ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+</style>
+
+</head>
+<body style="background:url(/vision/user/images/background/parquet_flooring-1920x1200.jpg); background-size: cover; ">
+<table  align="center" width="60%">
+ <tr height="40">
+  <td>
+  <a name="top"></a>
+  </td>
+ </tr>
+ <tr height='50' >
+ <td>
+   <table  id='indiv' align="center"><!--table 2 inside table 1-->
+     <tr>
+	  <td><a href='/vision/user/jsp files/afterlogin/afterlogin_index.jsp' target='_parent'>HOME</a></td>
+      <td><a href='/vision/user/jsp files/about_us.jsp' target='_parent'>ABOUT US</a></td>
+      <td><a href='/vision/user/jsp files/contact_us.jsp' target='_parent'>CONTACT US</a></td>
+      <td><a href='/vision/user/jsp files/afterlogin/afterlogin_information.jsp' target='_parent'>INFORMATION RESOURCE</a></td>
+      <td><a href='/vision/user/jsp files/afterlogin/feedback.jsp' target='_parent'>FEEDBACK</a></td>
+      <td><a href='/vision/user/jsp files/afterlogin/afterlogin_features.jsp' target='_top'class='current'>FEATURES</a></td>
+      <td><img src='/vision/user/images/loginform/user1.png'></img></td>
+	  <td id=dropdown>
+	   <ul >
+	    <li style="width: 83px;height: 33px">
+        Hi, <%String usrname=(String) session.getAttribute("username");%><%=usrname %>
+		 <ul>
+          <li style="float: left;display: inherit; " ><a href='/vision/LogoutServlet' style="font-size: inherit;text-align: left;  width: 63px; height: 8px; ">Log Out</a></li>
+     	  <li style="float: left;display: inherit; "><a href='/vision/UpdateServlet' style="font-size: inherit;text-align: left; width: 107px; height: 17px ">Update profile</a></li>
+		 </ul>								
+ 		</li>			    
+       </ul>         
+      </td>                  
+    				  
+	 </tr>
+			   
+    </table><!--end of table 2-->                  
+   </td>       	            
+  </tr>
+  <tr height='30'>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   <p style="font-family: cursive;font-size: x-large;font-weight: bold;color: Orange;text-align: center;">RANAKPUR</p>
+   </td>
+  </tr>
+  <tr height='20'>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <img src="/vision/user/images/ranakpur/ranakpur-qpr.jpg" name="slide" width="1024px" height="500px"  />
+    <script>
+	 <!--
+	 //variable that will increment through the images
+	 var step=1;
+	 function slideit(){
+	 //if browser does not support the image object, exit.
+	 if (!document.images)
+	 return
+	 document.images.slide.src=eval("image"+step+".src");   
+ 	 if (step<6)
+	 step++;
+	 else
+	 step=1;
+	 //call function "slideit()" every 2.5 seconds
+	 setTimeout("slideit()",4000);
+	 }
+	 slideit();
+	 //-->
+	</script>
+    
+    </td>
+  </tr>
+  <tr height='60'>
+  <td>
+  </td>
+  </tr>
+  <tr>
+   <td>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;"> 
+   Beautiful sculptured Jain temples mark the glory of this renowned place. Marked as one of the five holy places for the Jain community, 
+   these were created in the 15 the century. During the reign of Rana Kumbha and are enclosed within a wall. The central Chaumukha [four faced temple] 
+   is dedicated to Adinathji the temple is an astounding creation with 29 halls and 1,444 pillars all distinctly carved and no two being alike is a 
+   amazing evidence of the genius sense of architecture that enhances the charm of the place.</p>
+   
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">Every temple has this conceivable surface carved with equal delicacy.
+   The ambience of Ranakpur is mainly highlighted by the location and the almost divine architecture, giving the same hue as its counter part - the great Dilwara
+   Temple's. in Mt-Abu. </p>
+   
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">Facing the main temple are the unique temples -Parasvanath - Neminath with exquisite figures carving similar to that Khujaraho sculptures. 
+   Another temple worth visiting is the nearby 'Sun Temple' dedicated to the 'Sun God' (Surya-the master of all the planets and the provider of light to the whole universe) 
+   adorned with polygonal wall, richly embellished with the carvings of warriors, horses and solar (Nakshatras, grahs') deities riding splendid 'chariots' the vehicle of the 
+   'Sun God'- which accordingly to the Hindu Mythology is the God of prosperity and a shining destiny in this world. Many throng this shrine for these blessings. 
+   Overall Ranakpur is known as ' The tranquil pilgrimage town'. For the buffs a ride to the outskirts like ' Sadari' - 'Desuri'- 'Ghanerao'- 'Narhai', serves the purpose of their satisfaction.
+   </p><br/>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">HOW TO REACH:</p>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">By Road<br/>
+   44 km from Nathdwara<br/>
+   27 km from Falna<br/>
+   </p>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">By Train<br/>
+   27 km from Khimel(KZQ)Station<br/>
+   27 km from Falna(FA)Station<br/>
+   </p>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">By Air<br/>
+   There are no regular flights from other major cities of the country to Ranakpur. Nearest airport is Dabok Airport<br/>
+   68 km from Dabok Airport(UDR)<br/>
+   170 km from Jodhpur Airport(JDH)<br/>
+   <a href='#top' style="color: Orange">Back To Top</a>
+   </p>
+   </td>
+  </tr>
+  </table>
+  </body>
+  </html>
+  

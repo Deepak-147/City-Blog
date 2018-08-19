@@ -1,0 +1,54 @@
+<%@page import="java.sql.ResultSet"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function deleteUser(val) {
+	document.location.href="/vision/DeleteUserServlet?val="+val+""; 
+}
+</script>
+</head>
+<body>
+
+<table border="1" align="center">
+<tr>
+<td></td>
+<td><span style="font-weight: bold;">ID</span></td>
+<td><span style="font-weight: bold;">USERNAME</span></td>
+<td><span style="font-weight: bold;">GENDER</span></td>
+<td><span style="font-weight: bold;">PINCODE</span></td>
+<td><span style="font-weight: bold;">ADDRESS</span></td>
+<td><span style="font-weight: bold;">CONTACT NUMBER</span></td>
+<td><span style="font-weight: bold;">EMAIL</span></td>
+<td><span style="font-weight: bold;">COUNTRY</span></td>
+</tr>
+
+<%
+ 	ResultSet rs = (ResultSet) request.getAttribute("result");
+	if(rs!=null) {
+ 		while(rs.next()) {
+%> 
+<tr>
+	<td><u><a onclick="deleteUser(<%= rs.getString("ID") %>)">Delete User</a></u></td>
+	<td><%= rs.getString("ID") %></td>
+	<td><%= rs.getString("USERNAME") %></td>
+	<td><%= rs.getString("GENDER") %></td>
+	<td><%= rs.getString("PINCODE") %></td>
+	<td><%= rs.getString("ADDRESS") %></td>
+	<td><%= rs.getString("CONTACT_NO") %></td>
+	<td><%= rs.getString("EMAIL") %></td>
+	<td><%= rs.getString("COUNTRY") %></td>
+ </tr>
+	 
+<%
+ 		}
+ 	}
+%>
+
+</table>
+</body>
+</html>

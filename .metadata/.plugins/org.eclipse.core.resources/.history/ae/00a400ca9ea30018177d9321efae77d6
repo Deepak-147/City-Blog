@@ -1,0 +1,97 @@
+package com.vision.user;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
+
+import com.auto.util.EmailServlet;
+import com.vision.jdbc.JdbcConnection;
+
+/**
+ * Servlet implementation class RegisterServlet
+ */
+public class RegisterServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public RegisterServlet() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		String usrname = request.getParameter("usrname");
+		String password = request.getParameter("password");
+		String gender = request.getParameter("gender");
+		String pincode = request.getParameter("pincode");
+		String addr = request.getParameter("addr");
+		String number = request.getParameter("number");
+		String email = request.getParameter("email");
+		String country = request.getParameter("country");
+		JdbcConnection conn = new JdbcConnection();		
+		Connection con = conn.getConnection();
+		
+		try
+		{
+		
+		Statement state = con.createStatement();
+		
+		ResultSet rs = state.executeQuery("select * from register where USERNAME='"+usrname+"' OR EMAIL='"+email+"' ");
+		if(rs.next())
+		{
+			
+					
+				    response.sendRedirect("/vision/user/jsp files/error/register_error.jsp");
+				    return;
+			
+			
+		}
+		else
+		{
+			state.execute("insert into register(USERNAME,PASSWORD,GENDER,PINCODE,ADDRESS,CONTACT_NO,EMAIL,COUNTRY) values('"+usrname+"' , '"+password+"' , '"+gender+"' , '"+pincode+"' , '"+addr+"' , '"+number+"' , '"+email+"' , '"+country+"')");
+		}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			
+		}
+		
+		
+		EmailServlet em = new EmailServlet();
+		em.sendEmail(email,usrname,password);
+		
+		
+		
+		response.sendRedirect("/vision/user/jsp files/signup/aftersignup.jsp");
+		
+	}
+
+	
+	
+
+}

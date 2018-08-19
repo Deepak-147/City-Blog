@@ -1,0 +1,246 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@ include file="/user/jsp files/checksession.jsp" %>
+<script src="/vision/user/js files/scroll.js" type="text/javascript"></script>
+<title>Insert title here</title>
+<script type="text/javascript">
+var image1=new Image()
+image1.src="/vision/user/images/kumbhalgarh/kumbhalgarh-fort-udaipur-qpr.jpg"
+var image2=new Image()
+image2.src="/vision/user/images/kumbhalgarh/5-qpr.jpg"
+var image3=new Image()
+image3.src="/vision/user/images/kumbhalgarh/Kumbhalgarh_fort_at_night-qpr.jpg"
+var image4=new Image()
+image4.src="/vision/user/images/kumbhalgarh/fort-at-night-qpr.jpg"
+var image5=new Image()
+image5.src="/vision/user/images/kumbhalgarh/634915278833825686_Udaipur-KumbhalgarhFort-qpr.jpg"
+var image6=new Image()
+image6.src="/vision/user/images/kumbhalgarh/Kumbhalgarh-952_17-qpr.jpg"
+</script>
+
+<style>
+
+/* hover menu*/
+#indiv tr td a {
+    float: left;
+	display: block;
+	width: 160px;
+	height: 45px;
+	padding: 20px 0px 0 0px;
+	margin: 0px 10px 0px 10px ;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	color:Black;	
+	font-weight: bold;
+	outline: none;
+}
+
+#indiv tr td a:hover,#indiv tr td .current {
+  	border-radius: 10px;
+  	background: Black ;
+  	color: Orange; 
+}	
+
+#indiv tr td ul li ul li a:hover {
+  	background:none;
+    color: White; 
+}
+
+/* drop down menu*/
+/*body {
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 20px 50px 150px;
+  font-size: 13px;
+  text-align: center;
+  background: #E3CAA1;
+}*/
+
+#dropdown ul {
+	text-align: left;
+  	display: inline;
+	margin: 0;
+  	padding: 45px 10px 17px 5px;
+  	list-style: none;
+  	/*
+  	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  	*/
+}
+
+#dropdown ul li {
+	font: bold 16px/16px sans-serif;
+  	display: inline-block;
+  	margin-right: 5px;
+  	position: relative;
+  	padding: 10px 15px;
+  	background: rgba(213, 35, 35, 0.67);
+  	cursor: pointer;
+  	-webkit-transition: all 0.2s;
+  	-moz-transition: all 0.2s;
+  	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+  	transition: all 0.2s;
+}
+
+#dropdown ul li:hover {
+	background: rgba(213, 35, 35, 0.67);
+  	color: #fff;
+}
+
+#dropdown ul li ul {
+	padding: 0px;
+  	position: absolute;
+  	top: 52px;
+  	left: 0px;
+  	width: 130px;
+  	/*
+  	-webkit-box-shadow: none;
+  	-moz-box-shadow: none;
+  	box-shadow: none;
+  	*/
+  	display: none;
+  	opacity: 0;
+  	visibility: hidden;
+  	-webkit-transiton: opacity 0.2s;
+  	-moz-transition: opacity 0.2s;
+  	-ms-transition: opacity 0.2s;
+  	-o-transition: opacity 0.2s;
+  	-transition: opacity 0.2s;
+}
+
+#dropdown ul li ul li { 
+	background: rgba(199, 89, 38, 0.67);
+  	display: block; 
+  	color: #fff;
+}
+
+#dropdown ul li ul li:hover { 
+	background: rgba(199, 89, 38, 0.67);
+	display: none;
+}
+
+#dropdown ul li:hover ul {
+	display: block;
+  	opacity: 1;
+  	visibility: visible;
+}
+</style>
+
+</head>
+<body style="background:url(/vision/user/images/background/parquet_flooring-1920x1200.jpg); background-size: cover; ">
+<table align="center" width="60%">
+ <tr height="40">
+  <td>
+  <a name="top"></a>
+  </td>
+ </tr>
+ <tr height='50'>
+ <td>
+   <table id='indiv' align="center"><!--table 2 inside table 1-->
+     <tr>
+	  <td><a href='/vision/user/jsp files/afterlogin/afterlogin_index.jsp' target='_parent'>HOME</a></td>
+      <td><a href='/vision/user/jsp files/about_us.jsp' target='_parent'>ABOUT US</a></td>
+      <td><a href='/vision/user/jsp files/contact_us.jsp' target='_parent'>CONTACT US</a></td>
+      <td><a href='/vision/user/jsp files/afterlogin/afterlogin_information.jsp' target='_parent'>INFORMATION RESOURCE</a></td>
+      <td><a href='/vision/user/jsp files/afterlogin/feedback.jsp' target='_parent'>FEEDBACK</a></td>
+      <td><a href='/vision/user/jsp files/afterlogin/afterlogin_features.jsp' target='_top'class='current'>FEATURES</a></td>
+      <td><img src='/vision/user/images/loginform/user1.png'></img></td>
+	  <td id=dropdown>
+	   <ul >
+	    <li style="width: 83px;height: 33px">
+        Hi, <%String usrname=(String) session.getAttribute("username");%><%=usrname %>
+		 <ul>
+          <li style="float: left;display: inherit; " ><a href='/vision/LogoutServlet' style="font-size: inherit;text-align: left;  width: 63px; height: 8px; ">Log Out</a></li>
+     	  <li style="float: left;display: inherit; "><a href='/vision/UpdateServlet' style="font-size: inherit;text-align: left; width: 107px; height: 17px ">Update profile</a></li>
+		 </ul>								
+ 		</li>			    
+       </ul>         
+      </td>                  
+    				  
+	 </tr>
+			   
+    </table><!--end of table 2-->                  
+   </td>       	            
+  </tr>
+  <tr height='30'>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   <p style="font-family: cursive;font-size: x-large;font-weight: bold;color: Orange;text-align: center;">KUMBHALGARH</p>
+   </td>
+  </tr>
+  <tr height='20'>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <img src="/vision/user/images/kumbhalgarh/kumbhalgarh-fort-udaipur-qpr.jpg" name="slide" width="1024px" height="500px"  />
+    <script>
+	 <!--
+	 //variable that will increment through the images
+	 var step=1;
+	 function slideit(){
+	 //if browser does not support the image object, exit.
+	 if (!document.images)
+	 return
+	 document.images.slide.src=eval("image"+step+".src");   
+ 	 if (step<6)
+	 step++;
+	 else
+	 step=1;
+	 //call function "slideit()" every 2.5 seconds
+	 setTimeout("slideit()",4000);
+	 }
+	 slideit();
+	 //-->
+	</script>
+   </td>
+ </tr>
+  <tr height='60'>
+   <td>
+   </td>
+  </tr>
+  <tr height='40'>
+   <td>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">
+   Located 64 kms north of Udaipur in the wilderness,Kumbhalgarh, a small town in district Rajsamand is known world wide for its great history and architecture. Here lies the great Kumbhalgarh fort which was built during 15th century by Maharana Kumbha. Kumbhalgarh is the second most important citadel after Chittorgarh in the Mewar region.  Because of its inaccessibility and hostile topography the fort had remained un-conquered. 
+   It also served the rulers of Mewar as a refuge in times of strife. The fort also served as refuge to the baby king Udai of Mewar.</p> 
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">It is also of sentimental significance as it is the birthplace of Mewar's legendary King Maharana Partap. The fort is self-contained and has within its amalgam almost everything to withstand a long siege. 
+   The fort fell only once that too to the combined armies of Mughal and of Amber for scarcity of drinking water. Many magnificent palaces an array of temples built by the Mauryas of which the most picturesque place is the Badal Mahal or the palace of the clouds.</p>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">The fort also offers a superb birds view of the surroundings. The fort's thick wall stretches some 36 kms and is wide enough to take eight horses abreast. Maharana Fateh Singh renovated the fort in the 19th century. The fort's large compound has very interesting ruins and the walk around it can be very rewarding.
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;"> This almost invincible fort is the highest and most formidable in the state of Rajasthan. Even the mighty mughal couldn't capture it alone and it took the combined armies of Delhi, Amber and Marwar to breach its defences</p>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">Standing majestically on 1180m high ridge and representing the past glory of the Rajput rulers, the Fort also provides a panoramic view of the countryside from the top. Thirteen mountain peaks of the Aravali range protect this impregnable fortress. 
+   Seven huge and imposing gates stand like sentinels at the approaches and seven ramparts, one being folded within another with crenulated walls strengthened by rounded bastions and immense watch towers, make this an impregnable mountain fortress. It's serpentine 15 kilometres long wall is thick and broad enough for eight horses to 
+   ride abreast. This wall is second longest only to the 'Great Wall of China'. This grand fort also has 360 temples within the walls.
+   </p><br/>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">HOW TO REACH:</p>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">By Road<br/>
+		  -	Ahmedabad to Kumbhalgarh is 335 km <br/>
+		  -	Delhi to Kumbhalgarh is 625 km. <br/>
+		  -	Jaipur to Kumbhalgarh is 345 km <br/>
+	      -	Mumbai to Kumbhalgarh is 877 km <br/>
+		  -	Jodhpur to Kumbhalgarh is 235 km <br/>
+		  -	Chandigarh to Kumbhalgarh is 981 km<br/>
+		  -	Surat to Kumbhalgarh is 625 km<br/>
+		  -	Vadodara to Kumbhalgarh is 445 km<br/>
+   </p><br/>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">Nearest Railhead<br/>
+         Udaipur is also the nearest railhead, which is 80 km from Kumbhalgarh. Falna railway station is 80 km from Kumbhalgarh and has good connectivity with Mumbai, New Delhi and Jaipur. 
+   </p><br/>
+   <p style="color: White;font-family: cursive;font-size: medium;text-align: justify;">Nearest Airport<br/>
+         Udaipur airport is the nearest airport, which is 95 km from Kumbhalgarh.</p>
+   <a href='#top' style="color: Orange">Back To Top</a>
+   </td>
+  </tr>
+  </table>
+  </body>
+  </html> 

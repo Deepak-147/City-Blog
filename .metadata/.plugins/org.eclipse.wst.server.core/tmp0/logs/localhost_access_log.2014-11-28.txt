@@ -1,0 +1,7 @@
+127.0.0.1 - - [28/Nov/2014:10:36:26 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [28/Nov/2014:10:36:27 +0530] "GET /vision/user/jsp%20files/index/login_signup.jsp HTTP/1.1" 200 5169
+0:0:0:0:0:0:0:1 - - [28/Nov/2014:10:36:27 +0530] "GET /vision/user/js%20files/user_login.js HTTP/1.1" 200 2343
+0:0:0:0:0:0:0:1 - - [28/Nov/2014:10:36:27 +0530] "GET /vision/user/images/background/parquet_flooring-1920x1200.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Nov/2014:10:36:27 +0530] "GET /vision/user/images/loginform/password.png HTTP/1.1" 200 668
+0:0:0:0:0:0:0:1 - - [28/Nov/2014:10:36:27 +0530] "GET /vision/user/images/loginform/name.jpg HTTP/1.1" 200 1030
+0:0:0:0:0:0:0:1 - - [28/Nov/2014:10:36:37 +0530] "GET /vision/user/jsp%20files/index/login_signup.jsp HTTP/1.1" 200 5169

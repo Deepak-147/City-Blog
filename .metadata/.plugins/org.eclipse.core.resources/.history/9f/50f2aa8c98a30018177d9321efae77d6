@@ -1,0 +1,73 @@
+/* CSS Document */
+
+.star
+ {
+   color:#FF0000;
+  
+ }
+ .height
+ {
+  height:auto;
+ }
+ .textfield
+ {
+  font-size:18px;color:#000000;font-size:24px;     
+ }
+ 
+ #top
+ {
+  font-family:"Courier New", Courier, monospace;
+  font-size:36px;
+  color:#FF9900;
+  background-color:#000000;
+  border-radius: 10px;
+  
+ }
+ 
+ #tb
+ {
+  background: LemonChiffon;
+ }
+ 
+ #usrnameError
+ {
+  font-size:12px;color:#FF0000;
+ }
+  #passwordError
+ {
+  font-size:12px;color:#FF0000;
+ }
+  #ConfirmpasswordError
+ {
+  font-size:12px;color:#FF0000;
+ }
+  #genderError
+ {
+  font-size:12px;color:#FF0000;
+ }
+  #countryError
+ {
+  font-size:12px;color:#FF0000;
+ }
+  #pincodeError
+ {
+  font-size:12px;color:#FF0000;
+ }
+ #emailError
+ {
+  font-size:12px;color:#FF0000;
+ }
+ #commentsError
+ {
+  font-size:12px;color:#FF0000;
+ }
+
+
+
+
+
+
+
+
+
+

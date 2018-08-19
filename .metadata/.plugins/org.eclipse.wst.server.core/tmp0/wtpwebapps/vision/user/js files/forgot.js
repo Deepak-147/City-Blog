@@ -1,0 +1,90 @@
+
+
+window.onload = init;
+ 
+// The "onload" handler. Run after the page is fully loaded.
+function init() {
+   // Attach "onsubmit" handler
+   document.getElementById("forgot").onsubmit = validateforgotForm;
+   // Attach "onclick" handler to "reset" button
+   document.getElementById("reset").onclick = clearDisplay;
+   // Set initial focus
+   document.getElementById("email").focus();
+}
+ 
+/* The "onsubmit" handler to validate the input fields.
+ * Most of the input validation functions take 2 arguments:
+ * inputId or inputName: the "id" of the <input> element to be validated
+ *   or "name" for checkboxes and radio buttons.
+ * errorMsg: the error message to be displayed if validation fails.
+ *   The message shall be displayed on an element with id of
+ *   inputID+"Error" if it exists; otherwise via an alert().
+ */
+function validateforgotForm() 
+{
+   return ( 
+		   
+		    isValidEmail("email", "Enter a valid email!")
+           
+		  );
+}
+
+function isValidEmail(inputId, errorMsg) {
+   var inputElement = document.getElementById(inputId);
+   var errorElement = document.getElementById(inputId + "Error");
+   var inputValue = inputElement.value;
+   var atPos = inputValue.indexOf("@");
+   var dotPos = inputValue.lastIndexOf(".");
+   var isValid = (atPos > 0) && (dotPos > atPos + 1) && (inputValue.length > dotPos + 2);
+   showMessage(isValid, inputElement, errorMsg, errorElement);
+   return isValid;
+}
+ 
+
+/* If "isValid" is false, print the errorMsg; else, reset to normal display.
+ * The errorMsg shall be displayed on errorElement if it exists;
+ *   otherwise via an alert().
+ */
+function showMessage(isValid, inputElement, errorMsg, errorElement) 
+{
+   if (isValid) 
+   {
+     // Reset to normal display
+     if (errorElement != null) 
+	 {
+      errorElement.innerHTML = "";
+     }
+   }
+   else 
+   {
+     // Put up error message on errorElement or via alert()
+      if (errorElement != null) 
+	  {
+       errorElement.innerHTML = errorMsg;
+      } 
+	  else 
+	  {
+       alert(errorMsg);
+      }
+   } 
+}
+
+
+
+ 
+
+
+ // The "onclick" handler for the "reset" button to clear the display
+function clearDisplay() {
+   var elms = document.getElementsByTagName("*");  // all tags
+   for (var i = 0; i < elms.length; i++) {
+      if ((elms[i].id).match(/Error$/)) {  // no endsWith() in JS?
+         elms[i].innerHTML = "";
+      }
+      if (elms[i].className == "error") {  // assume only one class
+         elms[i].className = "";
+      }
+   }
+   // Set initial focus
+   document.getElementById("email").focus();
+}
